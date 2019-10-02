@@ -9,5 +9,6 @@
 
 for gauge in "02109500" "02134500" "02091814" "02105769"
 do
-    wget -q -O "$gauge".txt "https://waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no="$gauge"&referred_module=sw&period=&begin_date=1946-03-03&end_date=2018-12-06"
+    wget -q -O "$gauge".txt "https://waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no="$gauge"&referred_module=sw&period=&begin_date=1880-01-01&end_date="$date"
 done
+cat
