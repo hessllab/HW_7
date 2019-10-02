@@ -1,4 +1,4 @@
-#### Problem
+### Problem
 Harry is interested in how a recent hurricane is affecting rivers in North Carolina.  He would like to download the stream gauge data for the historic record including the most current levels for each river from a list of rivers in North Carolina. He found a list of USGS stream gauges in NC [here](https://waterdata.usgs.gov/nc/nwis/current/?type=flow). Can you and a partner help Henry create a script that automatically downloads historic stream flow data for the following stream gauges and then reports on current levels?  Here is his list:
 
 ```
