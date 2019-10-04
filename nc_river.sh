@@ -2,6 +2,7 @@
 # Usage: nc_river.sh 'date'
 # Date must be given in format YYYY-MM-DD
 # TEst test
+# test pt 2
 
 # The listed stations are:
 # 02109500	 WACCAMAW RIVER AT FREELAND, NC
