@@ -1,6 +1,7 @@
 # Bash Script to Find the Historic flow and most recent flow of NC rivers. 
 # Usage: nc_river.sh 'date'
 # Date must be given in format YYYY-MM-DD
+# TEst test
 
 # The listed stations are:
 # 02109500	 WACCAMAW RIVER AT FREELAND, NC
