@@ -16,3 +16,4 @@ do
   tail -1 $gauge.txt | cut -c 25-30 > record.txt # Extracts the last record of Maximum height 
   paste name.txt record.txt >> NC_current.txt # Creates a line with the name and the last record of the given station. 
 done
+
