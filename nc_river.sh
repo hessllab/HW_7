@@ -10,7 +10,7 @@
 
 d=$(date +'%F')
 
-echo "Downloading data from 2010-01-01 until "$d
+echo "Downloading data until "$d
 
 for gauge in "02109500" "02134500" "02091814" "02105769" #Variables
 do 
