@@ -16,4 +16,6 @@ do
   mv ./"$sitenumber".txt ./"$(grep -E -m 1 -w "$sitenumber" "$sitenumber".txt | cut -d\  -f 6- | sed 's/\ /_/g')".txt
 done
 
+# Usage: select the most recent data from each of the stream loactions
+# Product: site ID, most recent time of aquisition, and stream flow info for the four site locations.
 tail -n -1 "02091814_NEUSE_RIVER_NEAR_FORT_BARNWELL,_NC.txt" "02105769_CAPE_FEAR_R_AT_LOCK_#1_NR_KELLY,_NC.txt" "02109500_WACCAMAW_RIVER_AT_FREELAND,_NC.txt" "02134500_LUMBER_RIVER_AT_BOARDMAN,_NC.txt"
