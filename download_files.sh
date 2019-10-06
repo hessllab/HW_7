@@ -15,3 +15,5 @@ do
   wget -O ./"$sitenumber".txt -e robots=off -np -nd "https://nwis.waterdata.usgs.gov/nc/nwis/uv?cb_00060=on&format=rdb&site_no="$sitenumber"&period=&begin_date=2010-01-01&end_date="$1""
   mv ./"$sitenumber".txt ./"$(grep -E -m 1 -w "$sitenumber" "$sitenumber".txt | cut -d\  -f 6- | sed 's/\ /_/g')".txt
 done
+
+tail -n -1 "02091814_NEUSE_RIVER_NEAR_FORT_BARNWELL,_NC.txt" "02105769_CAPE_FEAR_R_AT_LOCK_#1_NR_KELLY,_NC.txt" "02109500_WACCAMAW_RIVER_AT_FREELAND,_NC.txt" "02134500_LUMBER_RIVER_AT_BOARDMAN,_NC.txt"
