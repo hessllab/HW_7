@@ -23,5 +23,16 @@ Tasks should be divided among the two of you.  All data, scripts, links, and com
 Once you have merged all branches, make a pull request to the instructor for this homework.
 
 
+---------
+#### Retrieve historical data
+To retrieve historical stream flow data on the four locations, use the bash script `historical_flow.sh`. This will retrieve data (01-01-2010 to present) from the USGS website for each location in a text file named for the location. 
 
+```bash
+for site in "02109500" "02134500" "02091814" "02105769"
+do
+  wget -O "$site".txt "https://nwis.waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=${site}&referred_module=sw&period=&begin_date=2010-01-01&end_date=2019-10-07"
+done
+```
 
+#### Sources
+All data for this script can be found online through the USGS at https://waterdata.usgs.gov/nc/nwis/current/?type=flow 
