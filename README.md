@@ -9,6 +9,7 @@ Tasks were divided as follows:
 2) Shaun: Check working script, edit if needed
 3) Shaun: Write ReadMe
 4) Luis: Check ReadMe, edit if needed
+
 All tasks were completed using Git.
 
 ### Problem
