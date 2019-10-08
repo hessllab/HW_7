@@ -58,11 +58,8 @@ cat "$sites" | tail -1 >> current_flow.txt
 done
 ```
 
-#### Products: Historical data
-
-###### The result of this script is four text files corresponding with each locaiton specified. The data is downloaded from the USGS website. 
-
-The result of this script is four text files corresponding with each locaiton specified. The data range is from 01-01-2010 to present (10-07-2019) and downloads from the USGS website. 
+#### Products
+The result of this script is four text files corresponding with each locaiton specified. The data is downloaded from the USGS website. 
 
 ```
 02109500.txt
