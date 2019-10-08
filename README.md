@@ -38,11 +38,11 @@ done
 
 
 
-##### To select the most recent data from each of the stream locations, a tail command is run to select the bottommost (and thus most recent) line of data for each of the four locations.
+##### To select the most recent data from each of the stream locations, a tail command is run to select the bottommost (and thus most recent) line of data for each of the four locations. The results are then sent to a newly created textfile in the working directory.
 ```
 tail -n -1 "02091814_NEUSE_RIVER_NEAR_FORT_BARNWELL,_NC.txt" "02105769_CAPE_FEAR_R_AT_LOCK_#1_NR_KELLY,_NC.txt" "02109500_WACCAMAW_RIVER_AT_FREELAND,_NC.txt" "02134500_LUMBER_RIVER_AT_BOARDMAN,_NC.txt" > latest_data_"$1".txt
 ```
-##### Running the command listed above will display the names of the locations, the data owner (USGS), site ID, time of aquisition, and stream flow info. The outcome as of 10/06/19 is listed below.
+##### Running the command listed above will display the names of the locations, the data owner (USGS), site ID, time of aquisition, and stream flow info. The outcomes as of 10/06/19 are listed below.
 ```
 ==> 02091814_NEUSE_RIVER_NEAR_FORT_BARNWELL,_NC.txt <==
 USGS    02091814        2019-10-06 13:30        EDT     784     P
