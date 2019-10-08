@@ -1,5 +1,9 @@
 ##### The script `download_files.sh` is made specifically for the 4 gauge stations in NC. The first command block will download the streamflow data and tailor output filenames. Then, the second block will report the most recent data of the 4 stations.  
 
+### Usage  
+```  
+bash download_files.sh Today's_DATE(yyyy-mm-dd)  
+```  
 -------------------------------------------------------------------------------  
 
 ### Download Streamflow Data  
