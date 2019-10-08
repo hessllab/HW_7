@@ -1,4 +1,17 @@
-#### Problem
+### Homework 7
+#### Jamiee Pyron and Sara Schreder-Gomes
+---------
+
+#### Requirements
+1. A partner for the exercise
+2. Internet connection
+3. Installation of Git Bash
+4. Installation of wget
+
+#### Assignment Summary
+Goal: become familiar with using git and GitHub by working on a collaborative assignment
+
+
 Harry is interested in how a recent hurricane is affecting rivers in North Carolina.  He would like to download the stream gauge data for the historic record including the most current levels for each river from a list of rivers in North Carolina. He found a list of USGS stream gauges in NC [here](https://waterdata.usgs.gov/nc/nwis/current/?type=flow). Can you and a partner help Henry create a script that automatically downloads historic stream flow data for the following stream gauges and then reports on current levels?  Here is his list:
 
 ```
@@ -8,7 +21,7 @@ Harry is interested in how a recent hurricane is affecting rivers in North Carol
 02105769	 CAPE FEAR R AT LOCK #1 NR KELLY, NC
 ```
 
-#### Tasks:
+#### Tasks Distribution
 
 Tasks should be divided among the two of you.  All data, scripts, links, and comments should be exchanged over __GitHub__. Avoid email or texting as you want a complete record of changes in your git history.
 
@@ -24,8 +37,10 @@ Once you have merged all branches, make a pull request to the instructor for thi
 
 
 ---------
-#### Retrieve historical data
-To retrieve historical stream flow data on the four locations, use the below bash script `historical_flow.sh`.  
+
+#### Usage: Historical data
+To retrieve historical stream flow data on the four locations, use the below bash scriptas:
+`bash historical_flow.sh`  
 
 ```bash
 for site in "02109500" "02134500" "02091814" "02105769"
@@ -33,7 +48,9 @@ do
   wget -O "$site".txt "https://nwis.waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=${site}&referred_module=sw&period=&begin_date=2010-01-01&end_date=2019-10-07"
 done
 ```
-The result of this script is four text files corresponding with each locaiton specified. The data range is from 01-01-2010 to present (10-07-2019) downloads from the USGS website. 
+
+#### Products: Historical data
+The result of this script is four text files corresponding with each locaiton specified. The data range is from 01-01-2010 to present (10-07-2019) and downloads from the USGS website. 
 ```
 02109500.txt
 02134500.txt
