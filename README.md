@@ -9,10 +9,7 @@
 4. Installation of wget
 
 #### Assignment Summary
-Goal: become familiar with using git and GitHub by working on a collaborative assignment
-
-
-Harry is interested in how a recent hurricane is affecting rivers in North Carolina.  He would like to download the stream gauge data for the historic record including the most current levels for each river from a list of rivers in North Carolina. He found a list of USGS stream gauges in NC [here](https://waterdata.usgs.gov/nc/nwis/current/?type=flow). Can you and a partner help Henry create a script that automatically downloads historic stream flow data for the following stream gauges and then reports on current levels?  Here is his list:
+Goal: become familiar with using git and GitHub by working on a collaborative assignment. The assignment is to retrieve historical data and current data from the USGS website for the sites listed below:
 
 ```
 02109500	 WACCAMAW RIVER AT FREELAND, NC
@@ -23,24 +20,18 @@ Harry is interested in how a recent hurricane is affecting rivers in North Carol
 
 #### Tasks Distribution
 
-Tasks should be divided among the two of you.  All data, scripts, links, and comments should be exchanged over __GitHub__. Avoid email or texting as you want a complete record of changes in your git history.
-
-1)	Use the fork-clone-branch system to create a new branch of this repo on Github.
-2)  Invite the other partner to collaborate on the branch.
-2)	Create a _README.md_ file that describes the project including a code and results snippets.
-3)	Create an __bash__ script that downloads the historical to present (up to date) flow files for each river and saves them as text files.
-4)	Create additional code that would report current flow for each river in a (single) separate text file.
-
-#### Submission Guidelines
-
-Once you have merged all branches, make a pull request to the instructor for this homework.
-
+1)	__Jaimee__: Use the fork-clone-branch system to create a new branch of this repo on Github.
+2)  __Jaimee__: Invite the other partner to collaborate on the branch.
+3)	__Sara and Jaimee__: Create a _README.md_ file that describes the project including a code and results snippets.
+4)	__Sara__: Create an __bash__ script that downloads the historical to present (up to date) flow files for each river and saves them as text files.
+5)	__Jaimee__: Create additional code that would report current flow for each river in a (single) separate text file.
 
 ---------
 
-#### Usage: Historical data
-To retrieve historical stream flow data on the four locations, use the below bash scriptas:
-`bash historical_flow.sh`  
+#### Usage
+To retrieve historical to present stream flow data on the four locations, use the below bash script:
+`bash historical_flow.sh $1`. 
+Where the variable `$1` will be the current date in the format: YYYY-MM-DD
 
 ```bash
 for site in "02109500" "02134500" "02091814" "02105769"
@@ -50,7 +41,7 @@ done
 ```
 
 #### Products: Historical data
-The result of this script is four text files corresponding with each locaiton specified. The data range is from 01-01-2010 to present (10-07-2019) and downloads from the USGS website. 
+The result of this script is four text files corresponding with each locaiton specified. The data is downloaded from the USGS website. 
 ```
 02109500.txt
 02134500.txt
