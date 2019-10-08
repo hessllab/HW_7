@@ -1,27 +1,62 @@
-#### Problem
-Harry is interested in how a recent hurricane is affecting rivers in North Carolina.  He would like to download the stream gauge data for the historic record including the most current levels for each river from a list of rivers in North Carolina. He found a list of USGS stream gauges in NC [here](https://waterdata.usgs.gov/nc/nwis/current/?type=flow). Can you and a partner help Henry create a script that automatically downloads historic stream flow data for the following stream gauges and then reports on current levels?  Here is his list:
+# Script to download Stream Gauge Data to access the effect of Hurricane on Rivers in NC
 
+This script downloads historical stream guage data (from 2010) for North Carolina from the USGS stream guage database and saves it in a textfile. To check the current flow of each river, this script also creates a text file called current_flow and saves the current flow readings for each river. 
+
+## Prerequisites
+
+To run this script `git bash` and `wget` is required
+
+## Usage
+
+Run the command below in the terminal to utilize the script.
+The date is the most recent date in the form of year-month-date (for example: 2019-10-08)
+```
+bash flow.sh date
+```
+
+## Code
+```bash
+# Collect flow from 2010 to present
+# Usage: bash flow.sh date (year-month-day)
+mkdir NC_flow && cd NC_flow
+for site in "02109500" "02134500" "02091814" "02105769"
+do
+ wget -O "$site".txt "https://nwis.waterdata.usgs.gov/nc/nwis/uv/?cb_00060=on&format=rdb&site_no="$site"&period=&begin_date=2010-01-01&end_date="$1""
+ tail -1 "$site".txt >> current_flow.txt
+done
+cd ..
+```
+
+## Product
+The script downloads the stream guage reading for the following rivers from 2010 till date.
 ```
 02109500	 WACCAMAW RIVER AT FREELAND, NC
 02134500	 LUMBER RIVER AT BOARDMAN, NC
-02091814	 NEUSE RIVER NEAR FORT BARNWELL, NC 		 
+02091814	 NEUSE RIVER NEAR FORT BARNWELL, NC  
 02105769	 CAPE FEAR R AT LOCK #1 NR KELLY, NC
 ```
+it saves this downloaded data in a directory called `NC_flow`. This data is in the form of a textfile with the name being the unique site numbers of each river. For example, the textfile for the `WACCAMAW RIVER` is called `02109500.txt`
 
-#### Tasks:
+The script then returns the most recent stream guage readings for each river and saves it in a textfile called `current_flow` where the column heading for the textfile is:
+`agency_cd	site_no	datetime	tz_cd	89721_00060	89721_00060_cd`
 
-Tasks should be divided among the two of you.  All data, scripts, links, and comments should be exchanged over __GitHub__. Avoid email or texting as you want a complete record of changes in your git history.
+The result of this textfile is below.
+```
+USGS	02109500	2019-10-06 23:45	EDT	93.0	P
+USGS	02134500	2019-10-06 23:45	EDT	198	P
+USGS	02091814	2019-10-06 23:45	EDT	774	P
+USGS	02105769	2019-10-06 23:45	EDT	979	P
+```
 
-1)	Use the fork-clone-branch system to create a new branch of this repo on Github.
-2)  Invite the other partner to collaborate on the branch.
-2)	Create a _README.md_ file that describes the project including a code and results snippets.
-3)	Create an __bash__ script that downloads the historical to present (up to date) flow files for each river and saves them as text files.
-4)	Create additional code that would report current flow for each river in a (single) separate text file.
+## Colaborators
 
-#### Submission Guidelines
+[Zachary Grzywacz](https://github.com/zgrzywacz)
+[Tobi Ore](https://github.com/tobi-ore)
 
-Once you have merged all branches, make a pull request to the instructor for this homework.
+## License
 
+[This project is licensed under the MIT License](https://choosealicense.com/licenses/mit/)
 
+## Acknowledgments
 
-
+[Dr Amy Hessl](https://github.com/hessllab)
