@@ -60,8 +60,8 @@ done
 
 #### Products: Historical data
 
-The result of this script is four text files corresponding with each locaiton specified. The data is downloaded from the USGS website. 
-=======
+###### The result of this script is four text files corresponding with each locaiton specified. The data is downloaded from the USGS website. 
+
 The result of this script is four text files corresponding with each locaiton specified. The data range is from 01-01-2010 to present (10-07-2019) and downloads from the USGS website. 
 
 ```
@@ -71,10 +71,6 @@ The result of this script is four text files corresponding with each locaiton sp
 02105769.txt
 ```
 
-
-#### Sources
-All data for this script can be found online through the USGS at https://waterdata.usgs.gov/nc/nwis/current/?type=flow 
-=======
 In considering most recent stream flow data, the expected output is below.
 ```
 17:#    USGS 02091814 NEUSE RIVER NEAR FORT BARNWELL, NC
@@ -86,4 +82,9 @@ USGS    02109500        2019-10-07                                      88.1    
 17:#    USGS 02134500 LUMBER RIVER AT BOARDMAN, NC
 USGS    02134500        2019-10-07                                      203     P
 ```
+
+
+#### Sources
+###### All data for this script can be found online through the USGS at https://waterdata.usgs.gov/nc/nwis/current/?type=flow 
+
 
