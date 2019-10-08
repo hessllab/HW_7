@@ -1,26 +1,18 @@
-#### Problem
-Harry is interested in how a recent hurricane is affecting rivers in North Carolina.  He would like to download the stream gauge data for the historic record including the most current levels for each river from a list of rivers in North Carolina. He found a list of USGS stream gauges in NC [here](https://waterdata.usgs.gov/nc/nwis/current/?type=flow). Can you and a partner help Henry create a script that automatically downloads historic stream flow data for the following stream gauges and then reports on current levels?  Here is his list:
+#### Download Stream Data
+Use the StreamFlowData.sh to download data for 4 NC sites.
+The shell script is a for loop that goes through the 4 desired sites and downloads stream flow data from each site. 
 
+```bash
+#Usage bash StreamFlowData.sh
+for sitenumber in "02109500" "02134500" "02091814" "02105769"
+do
 ```
-02109500	 WACCAMAW RIVER AT FREELAND, NC
-02134500	 LUMBER RIVER AT BOARDMAN, NC
-02091814	 NEUSE RIVER NEAR FORT BARNWELL, NC 		 
-02105769	 CAPE FEAR R AT LOCK #1 NR KELLY, NC
+The script then uses wget to download the data using time parameters and placing the variable name "$sitenumber" to specify the stations. The script creates individual text files for each station that includes the downloaded data. 
+```bash
+wget -O "$sitenumber".txt "https://nwis.waterdata.usgs.gov/nc/nwis/uv?cb_00060=on&format=rdb&site_no="$sitenumber"&period=&begin_date=2010-01-01&end_date=2019-10-07"
+done
 ```
 
-#### Tasks:
-
-Tasks should be divided among the two of you.  All data, scripts, links, and comments should be exchanged over __GitHub__. Avoid email or texting as you want a complete record of changes in your git history.
-
-1)	Use the fork-clone-branch system to create a new branch of this repo on Github.
-2)  Invite the other partner to collaborate on the branch.
-2)	Create a _README.md_ file that describes the project including a code and results snippets.
-3)	Create an __bash__ script that downloads the historical to present (up to date) flow files for each river and saves them as text files.
-4)	Create additional code that would report current flow for each river in a (single) separate text file.
-
-#### Submission Guidelines
-
-Once you have merged all branches, make a pull request to the instructor for this homework.
 
 
 
