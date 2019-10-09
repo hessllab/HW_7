@@ -74,5 +74,3 @@ USGS    02134500        2019-10-07                                      203     
 
 #### Sources
 All data for this script can be found online through the USGS at https://waterdata.usgs.gov/nc/nwis/current/?type=flow 
-
-
