@@ -9,7 +9,7 @@
 4. Installation of wget
 
 #### Assignment Summary
-Goal: become familiar with using git and GitHub by working on a collaborative assignment. The assignment is to retrieve historical data and current data from the USGS website for the sites listed below:
+Goal: become familiar with using git and GitHub by working on a collaborative assignment. The assignment is to retrieve historical stream flow data and current stream flow data from the USGS website for the sites listed below:
 
 ```
 02109500	 WACCAMAW RIVER AT FREELAND, NC
@@ -26,8 +26,6 @@ Goal: become familiar with using git and GitHub by working on a collaborative as
 4)	__Sara__: Create an __bash__ script that downloads the historical to present (up to date) flow files for each river and saves them as text files.
 5)	__Jaimee__: Create additional code that would report current flow for each river in a (single) separate text file.
 
----------
-
 #### Usage
 To retrieve historical to present stream flow data on the four locations, use the below bash script:
 `bash historical_flow.sh $1`. 
@@ -37,19 +35,9 @@ Where the variable `$1` will be the current date in the format: YYYY-MM-DD
 for site in "02109500" "02134500" "02091814" "02105769"
 do
   wget -O "$site".txt "https://nwis.waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=${site}&referred_module=sw&period=&begin_date=2010-01-01&end_date=$1"
-=======
-#### Usage: Historical data
-To retrieve historical stream flow data on the four locations, use the below bash script as:
-`bash historical_flow.sh`  
-
-```bash
-for site in "02109500" "02134500" "02091814" "02105769"
-do
-  wget -O "$site".txt "https://nwis.waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=${site}&referred_module=sw&period=&begin_date=2010-01-01&end_date=2019-10-07"
-done
-```
 
 Current flows can also be retrieved from `bash historical_flow.sh`. This code, as shown below, looks at all *.txt* files created from the last script. The line with the word "NC" is chosen and displayed in a textfile, called current_flow.txt, as it shows critical identifiers such as the name and location of the river. Finally, the most recent flow information is appended to the textfile.
+
 ```bash
 for sites in *.txt
 do
@@ -60,8 +48,6 @@ done
 
 #### Products: Historical data
 
-The result of this script is four text files corresponding with each locaiton specified. The data is downloaded from the USGS website. 
-=======
 The result of this script is four text files corresponding with each locaiton specified. The data range is from 01-01-2010 to present (10-07-2019) and downloads from the USGS website. 
 
 ```
@@ -71,11 +57,8 @@ The result of this script is four text files corresponding with each locaiton sp
 02105769.txt
 ```
 
-
-#### Sources
-All data for this script can be found online through the USGS at https://waterdata.usgs.gov/nc/nwis/current/?type=flow 
-=======
 In considering most recent stream flow data, the expected output is below.
+
 ```
 17:#    USGS 02091814 NEUSE RIVER NEAR FORT BARNWELL, NC
 USGS    02091814        2019-10-07      722     P
@@ -87,3 +70,5 @@ USGS    02109500        2019-10-07                                      88.1    
 USGS    02134500        2019-10-07                                      203     P
 ```
 
+#### Sources
+All data for this script can be found online through the USGS at https://waterdata.usgs.gov/nc/nwis/current/?type=flow 
