@@ -48,7 +48,6 @@ cat "$sites" | tail -1 >> current_flow.txt
 done
 ```
 
-<<<<<<< HEAD
 #### Products
 
 The result of this script is four text files corresponding with each locaiton specified. The data range is from 01-01-2010 to present (10-07-2019) and downloads from the USGS website. 
